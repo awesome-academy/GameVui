@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">GameVui</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_search">Search</string>
+    <string name="title_saved">Saved</string>
+    <string name="title_news">News</string>
+
 </resources>
