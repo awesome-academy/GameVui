@@ -1,7 +1,7 @@
 package com.sun.gamevui.di
 
 import com.sun.gamevui.BuildConfig
-import com.sun.gamevui.data.ApiConfig
+import com.sun.gamevui.data.remote.ApiConfig
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

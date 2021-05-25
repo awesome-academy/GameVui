@@ -1,6 +1,6 @@
 package com.sun.gamevui.di
 
-import com.sun.gamevui.data.ApiService
+import com.sun.gamevui.data.remote.ApiService
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
