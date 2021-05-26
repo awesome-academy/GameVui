@@ -5,5 +5,9 @@
     <string name="title_search">Search</string>
     <string name="title_saved">Saved</string>
     <string name="title_news">News</string>
+    <string name="title_pc">PC</string>
+    <string name="title_ps">PlayStation</string>
+    <string name="title_xbox">Xbox</string>
+    <string name="title_popular">Popular</string>
 
 </resources>
