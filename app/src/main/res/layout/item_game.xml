@@ -11,53 +11,64 @@
     </data>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/dp_16"
         android:layout_marginBottom="@dimen/dp_16"
         app:cardCornerRadius="@dimen/dp_8">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="@dimen/dp_200"
-            android:layout_height="@dimen/dp_200">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/imageGame"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:scaleType="fitXY"
+                app:layout_constraintDimensionRatio="1.2:1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="0.6"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:loadImage="@{game.image}"
                 tools:src="@tools:sample/avatars" />
 
             <ImageView
                 android:id="@+id/imagePc"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_4"
                 android:src="@drawable/ic_microsoft"
+                android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imageGame" />
+                app:layout_constraintTop_toBottomOf="@id/imageGame"
+                app:platform="@{`PC`}"
+                app:searchIcon="@{game.parentPlatforms}" />
 
             <ImageView
                 android:id="@+id/imagePs"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_4"
                 android:src="@drawable/ic_playstation"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@id/imagePc"
-                app:layout_constraintTop_toBottomOf="@id/imageGame" />
+                app:layout_constraintTop_toBottomOf="@id/imageGame"
+                app:platform="@{`PlayStation`}"
+                app:searchIcon="@{game.parentPlatforms}" />
 
             <ImageView
                 android:id="@+id/imageXbox"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_4"
                 android:src="@drawable/ic_xbox"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@id/imagePs"
-                app:layout_constraintTop_toBottomOf="@id/imageGame" />
+                app:layout_constraintTop_toBottomOf="@id/imageGame"
+                app:platform="@{`Xbox`}"
+                app:searchIcon="@{game.parentPlatforms}" />
 
             <TextView
                 android:id="@+id/textNameGame"
@@ -65,7 +76,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_4"
                 android:ellipsize="end"
-                android:maxLines="1"
+                android:maxLines="2"
+                android:text="@{game.name}"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
@@ -78,6 +90,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_4"
+                android:text="@{String.valueOf(game.score)}"
+                android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_18"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"

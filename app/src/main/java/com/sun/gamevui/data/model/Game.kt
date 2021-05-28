@@ -23,7 +23,7 @@ data class Game(
     val score: Long,
     @ColumnInfo(name = "platforms")
     @SerializedName("parent_platforms")
-    val platforms: List<Platform>
+    val parentPlatforms: List<Platforms>
 ) {
     companion object {
         val diffUtil = object : DiffUtil.ItemCallback<Game>() {

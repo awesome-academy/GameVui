@@ -7,4 +7,7 @@ class GameRemoteDataSource(
 ) : GameDataSource.Remote {
     override suspend fun getPopularGames(platform: String) =
         apiService.getPopularGames(platform)
+
+    override suspend fun getGameByGenre(genre: String, platform: String) =
+        apiService.getGamesByGenre(genre, platform)
 }
