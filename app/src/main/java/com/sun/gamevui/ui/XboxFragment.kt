@@ -8,7 +8,7 @@ import com.sun.gamevui.ui.adapter.GenreAdapter
 import com.sun.gamevui.ui.adapter.PopularAdapter
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class PsFragment : BaseFragment<FragmentPlatformBinding>() {
+class XboxFragment : BaseFragment<FragmentPlatformBinding>() {
     private val popularAdapter = PopularAdapter(this::clickItemPopular)
     private val genreAdapter by lazy { context?.let { GenreAdapter(it) } }
     override val layoutId = R.layout.fragment_platform

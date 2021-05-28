@@ -12,6 +12,7 @@ import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val pcFragment = PcFragment()
     private val psFragment = PsFragment()
+    private val xboxFragment = XboxFragment()
     override val layoutId get() = R.layout.fragment_home
     override val viewModel by sharedViewModel<HomeViewModel>()
 
@@ -19,6 +20,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         HomeViewPagerAdapter(childFragmentManager).apply {
             addFragment(pcFragment, getString(R.string.title_pc))
             addFragment(psFragment, getString(R.string.title_ps))
+            addFragment(xboxFragment, getString(R.string.title_xbox))
             binding?.viewPagerHome?.adapter = this
         }
         binding?.tabHome?.setupWithViewPager(binding?.viewPagerHome)
@@ -37,6 +39,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 when (tab?.position) {
                     0 -> viewModel.getPopularGames(ApiConfig.BASE_PC)
                     1 -> viewModel.getPopularGames(ApiConfig.BASE_PS)
+                    2 -> viewModel.getPopularGames(ApiConfig.BASE_XBOX)
                 }
             }
 
