@@ -13,4 +13,10 @@ interface ApiService {
 
     @GET(ApiConfig.BASE_GENRE)
     suspend fun getGenres(): GenreResponse
+
+    @GET(ApiConfig.BASE_GAME)
+    suspend fun getGamesByGenre(
+        @Query(ApiConfig.BASE_GENRE) genre: String,
+        @Query(ApiConfig.BASE_PARENT_PLATFORM) platform: String
+    ): GameResponse
 }

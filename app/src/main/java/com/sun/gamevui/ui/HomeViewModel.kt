@@ -22,6 +22,9 @@ class HomeViewModel(
     private val _genres = MutableLiveData<List<Genre>>()
     val genres: LiveData<List<Genre>>
         get() = _genres
+    private val _gamesByGenre = MutableLiveData<List<Game>>()
+    val gamesByGenre: LiveData<List<Game>>
+        get() = _gamesByGenre
 
     init {
         getPopularGames(ApiConfig.BASE_PC)
@@ -39,6 +42,13 @@ class HomeViewModel(
         viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
             val genresFromApi = genreRepo.getGenres()
             _genres.postValue(genresFromApi.results)
+        }
+    }
+
+    fun getGamesByGenre(genre: String, platform: String) {
+        viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
+            val gamesByGenreFromApi = gameRepo.getGamesByGenre(genre, platform)
+            _gamesByGenre.postValue(gamesByGenreFromApi.results)
         }
     }
 }
