@@ -7,5 +7,6 @@ interface GameDataSource {
     interface Remote {
         suspend fun getPopularGames(platform: String): GameResponse
         suspend fun getGameByGenre(genre: String, platform: String): GameResponse
+        suspend fun getGameByName(name: String): GameResponse
     }
 }
