@@ -2,6 +2,7 @@ package com.sun.gamevui.ui
 
 import android.view.View
 import android.widget.AdapterView
+import androidx.navigation.fragment.findNavController
 import com.sun.gamevui.R
 import com.sun.gamevui.base.BaseFragment
 import com.sun.gamevui.data.model.Game
@@ -66,8 +67,12 @@ class PcFragment : BaseFragment<FragmentPlatformBinding>() {
     }
 
     private fun clickItemPopular(game: Game) {
+        val action = HomeFragmentDirections.actionHomeFragmentToGameDetailFragment(game.id)
+        findNavController().navigate(action)
     }
 
     private fun clickItemGame(game: Game) {
+        val action = HomeFragmentDirections.actionHomeFragmentToGameDetailFragment(game.id)
+        findNavController().navigate(action)
     }
 }
