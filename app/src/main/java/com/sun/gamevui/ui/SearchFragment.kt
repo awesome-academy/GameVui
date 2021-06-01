@@ -1,6 +1,7 @@
 package com.sun.gamevui.ui
 
 import android.view.inputmethod.EditorInfo
+import androidx.navigation.fragment.findNavController
 import com.sun.gamevui.R
 import com.sun.gamevui.base.BaseFragment
 import com.sun.gamevui.data.model.Game
@@ -36,5 +37,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
     }
 
     private fun clickItemGame(game: Game) {
+        val action = SearchFragmentDirections.actionSearchFragmentToGameDetailFragment(game.id)
+        findNavController().navigate(action)
     }
 }

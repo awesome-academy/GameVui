@@ -22,5 +22,9 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.sun.gamevui.ui.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="SearchFragment">
+        <action
+            android:id="@+id/action_searchFragment_to_gameDetailFragment"
+            app:destination="@id/gameDetailFragment" />
+    </fragment>
 </navigation>
