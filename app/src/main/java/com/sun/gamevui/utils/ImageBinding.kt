@@ -4,12 +4,14 @@ import android.view.View
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.sun.gamevui.R
 import com.sun.gamevui.data.model.Platforms
 
 @BindingAdapter("app:loadImage")
-fun ImageView.loadImage(uri: String) {
+fun ImageView.loadImage(uri: String?) {
     Glide.with(context)
         .load(uri)
+        .error(R.drawable.image_error)
         .into(this)
 }
 
