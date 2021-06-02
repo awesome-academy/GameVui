@@ -1,5 +1,6 @@
 package com.sun.gamevui.data
 
+import com.sun.gamevui.data.model.Game
 import com.sun.gamevui.data.model.GameResponse
 
 interface GameDataSource {
@@ -8,5 +9,11 @@ interface GameDataSource {
         suspend fun getPopularGames(platform: String): GameResponse
         suspend fun getGameByGenre(genre: String, platform: String): GameResponse
         suspend fun getGameByName(name: String): GameResponse
+    }
+
+    interface Local {
+        suspend fun getSavedGames(): List<Game>
+        suspend fun insertGame(game: Game)
+        suspend fun deleteGame(game: Game)
     }
 }
