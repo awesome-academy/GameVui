@@ -10,7 +10,8 @@ import com.sun.gamevui.data.model.Game
 import com.sun.gamevui.databinding.ItemGameSavedBinding
 
 class SavedGamesAdapter(
-    private val onItemClick: (Game) -> Unit
+    private val onItemClick: (Game) -> Unit,
+    private val onDeleteClick: (Game) -> Unit
 ) : BaseAdapter<Game, SavedGamesAdapter.GameViewHolder>(Game.diffUtil) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
@@ -20,13 +21,20 @@ class SavedGamesAdapter(
                 R.layout.item_game_saved,
                 parent,
                 false
-            ), onItemClick
+            ), onItemClick, onDeleteClick
         )
 
     class GameViewHolder(
         private val itemGameSavedBinding: ItemGameSavedBinding,
-        onClickItem: (Game) -> Unit
+        onClickItem: (Game) -> Unit,
+        onDeleteClick: (Game) -> Unit
     ) : BaseViewHolder<Game>(itemGameSavedBinding, onClickItem) {
+
+        init {
+            itemGameSavedBinding.imageSaved.setOnClickListener {
+                item?.let(onDeleteClick)
+            }
+        }
 
         override fun bindData(item: Game) {
             super.bindData(item)

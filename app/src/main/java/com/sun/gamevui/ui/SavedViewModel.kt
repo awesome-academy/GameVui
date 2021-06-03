@@ -27,4 +27,11 @@ class SavedViewModel(
             _games.postValue(savedGames)
         }
     }
+
+    fun deleteGame(game: Game) {
+        viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
+            repo.deleteGame(game)
+            getSavedGames()
+        }
+    }
 }

@@ -1,5 +1,6 @@
 package com.sun.gamevui.ui
 
+import androidx.navigation.fragment.findNavController
 import com.sun.gamevui.R
 import com.sun.gamevui.base.BaseFragment
 import com.sun.gamevui.data.model.Game
@@ -9,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SavedFragment : BaseFragment<FragmentSavedBinding>() {
 
-    private val savedGamesAdapter = SavedGamesAdapter(::onItemClick)
+    private val savedGamesAdapter = SavedGamesAdapter(::onItemClick, ::onDeleteClick)
     override val layoutId get() = R.layout.fragment_saved
     override val viewModel by viewModel<SavedViewModel>()
 
@@ -28,5 +29,11 @@ class SavedFragment : BaseFragment<FragmentSavedBinding>() {
     }
 
     private fun onItemClick(game: Game) {
+        val action = SavedFragmentDirections.savedFragmentToDetailFragment(game.id)
+        findNavController().navigate(action)
+    }
+
+    private fun onDeleteClick(game: Game) {
+        viewModel.deleteGame(game)
     }
 }
