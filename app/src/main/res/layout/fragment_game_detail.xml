@@ -1,11 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data></data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/viewActionbar"
+                android:layout_width="0dp"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/color_milano_red"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageLogo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_logo"
+                app:layout_constraintBottom_toBottomOf="@id/viewActionbar"
+                app:layout_constraintDimensionRatio="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.407"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.464" />
+
+            <TextView
+                android:id="@+id/textAppName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/viewActionbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imageLogo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageBack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:padding="@dimen/dp_16"
+                android:src="@drawable/ic_back"
+                app:layout_constraintBottom_toBottomOf="@id/viewActionbar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerBanner"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewActionbar" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabIndicator"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.03"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewPagerBanner"
+                app:tabBackground="@drawable/indicator_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp" />
+
+            <TextView
+                android:id="@+id/textAvailable"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:text="@string/title_available"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabIndicator" />
+
+            <TextView
+                android:id="@+id/textReleased"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabIndicator"
+                tools:text="@tools:sample/date/mmddyy" />
+
+            <ImageView
+                android:id="@+id/imagePc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:src="@drawable/ic_microsoft"
+                app:layout_constraintStart_toEndOf="@id/textAvailable"
+                app:layout_constraintTop_toBottomOf="@id/tabIndicator" />
+
+            <ImageView
+                android:id="@+id/imagePs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:src="@drawable/ic_playstation"
+                app:layout_constraintStart_toEndOf="@id/imagePc"
+                app:layout_constraintTop_toBottomOf="@id/tabIndicator" />
+
+            <ImageView
+                android:id="@+id/imageXbox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_8"
+                android:src="@drawable/ic_xbox"
+                app:layout_constraintStart_toEndOf="@id/imagePs"
+                app:layout_constraintTop_toBottomOf="@id/tabIndicator" />
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_24"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textAvailable"
+                tools:text="@tools:sample/lorem" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRatings"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/dp_16"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textName"
+                app:spanCount="2"
+                tools:itemCount="4"
+                tools:listitem="@layout/item_rating" />
+
+            <ImageView
+                android:id="@+id/imageBackground"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/dp_16"
+                android:src="@drawable/bg_edittext"
+                app:layout_constraintDimensionRatio="1:0.36"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerRatings"
+                app:layout_constraintWidth_percent="0.35" />
+
+            <TextView
+                android:id="@+id/textAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:padding="@dimen/dp_16"
+                android:paddingEnd="@dimen/dp_36"
+                android:text="@string/title_add"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imageBackground" />
+
+            <ImageView
+                android:id="@+id/imageSaved"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_12"
+                android:src="@drawable/ic_saved"
+                app:layout_constraintEnd_toEndOf="@id/imageBackground"
+                app:layout_constraintTop_toTopOf="@id/imageBackground" />
+
+            <TextView
+                android:id="@+id/textAbout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="@string/title_about"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/textDescription"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imageBackground" />
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sp_16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textAbout"
+                tools:text="@tools:sample/lorem" />
+
+            <TextView
+                android:id="@+id/textGenre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:text="@string/title_genre"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textDescription" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerGenre"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textGenre"
+                tools:listitem="@layout/item_tag" />
+
+            <TextView
+                android:id="@+id/textDeveloper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:text="@string/title_developer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerGenre" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerDeveloper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textDeveloper"
+                tools:listitem="@layout/item_tag" />
+
+            <TextView
+                android:id="@+id/textPublisher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:text="@string/title_publisher"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recyclerDeveloper" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPublisher"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textPublisher"
+                tools:listitem="@layout/item_tag" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>

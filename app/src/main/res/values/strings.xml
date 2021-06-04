@@ -9,5 +9,10 @@
     <string name="title_ps">PlayStation</string>
     <string name="title_xbox">Xbox</string>
     <string name="title_popular">Popular</string>
-
+    <string name="title_available">Available on:</string>
+    <string name="title_add">+Add to Saved</string>
+    <string name="title_about">About</string>
+    <string name="title_genre">Genre</string>
+    <string name="title_developer">Developer</string>
+    <string name="title_publisher">Publisher</string>
 </resources>
