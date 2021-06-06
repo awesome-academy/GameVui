@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+
+        <variable
+            name="detailVM"
+            type="com.sun.gamevui.ui.GameDetailViewModel" />
+    </data>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -97,6 +102,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_8"
+                android:text="@{detailVM.detail.released}"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_16"
                 android:textStyle="bold"
@@ -137,6 +143,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dp_16"
                 android:layout_marginTop="@dimen/dp_8"
+                android:text="@{detailVM.detail.name}"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_24"
                 android:textStyle="bold"
@@ -149,8 +156,10 @@
                 android:id="@+id/recyclerRatings"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_margin="@dimen/dp_16"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_16"
                 android:orientation="vertical"
+                app:data="@{detailVM.detail.ratings}"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHeight_percent="0.1"
@@ -187,7 +196,7 @@
                 android:id="@+id/imageSaved"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
                 android:src="@drawable/ic_saved"
                 app:layout_constraintEnd_toEndOf="@id/imageBackground"
                 app:layout_constraintTop_toTopOf="@id/imageBackground" />
@@ -211,6 +220,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/dp_16"
+                android:text="@{detailVM.detail.description}"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_16"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -233,6 +243,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_16"
                 android:orientation="horizontal"
+                app:data="@{detailVM.detail.genre}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textGenre"
@@ -253,6 +264,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_16"
                 android:orientation="horizontal"
+                app:data="@{detailVM.detail.developers}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textDeveloper"
@@ -273,6 +285,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dp_16"
                 android:orientation="horizontal"
+                app:data="@{detailVM.detail.publishers}"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/textPublisher"

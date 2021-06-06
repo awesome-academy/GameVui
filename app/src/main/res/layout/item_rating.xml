@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+
+        <variable
+            name="rating"
+            type="com.sun.gamevui.data.model.Rating" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,6 +29,7 @@
             android:id="@+id/textName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="@{rating.title}"
             app:layout_constraintEnd_toStartOf="@id/textVote"
             app:layout_constraintStart_toEndOf="@id/imageCircle"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,6 +39,7 @@
             android:id="@+id/textVote"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:text="@{String.valueOf(rating.count)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/textName"
             app:layout_constraintTop_toTopOf="parent"

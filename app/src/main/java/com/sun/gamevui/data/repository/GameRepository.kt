@@ -1,6 +1,7 @@
 package com.sun.gamevui.data.repository
 
 import com.sun.gamevui.data.model.Game
+import com.sun.gamevui.data.model.GameDetail
 import com.sun.gamevui.data.model.GameResponse
 
 interface GameRepository {
@@ -10,4 +11,5 @@ interface GameRepository {
     suspend fun getSavedGames(): List<Game>
     suspend fun insertGame(game: Game)
     suspend fun deleteGame(game: Game)
+    suspend fun getGameDetail(id: Long): GameDetail
 }
