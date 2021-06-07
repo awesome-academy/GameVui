@@ -19,11 +19,13 @@ class GameRepositoryImpl(
     override suspend fun getSavedGames(): List<Game> =
         local.getSavedGames()
 
-    override suspend fun insertGame(game: Game) {
+    override suspend fun insertGame(game: Game) =
         local.insertGame(game)
-    }
 
-    override suspend fun deleteGame(game: Game) {
+
+    override suspend fun deleteGame(game: Game) =
         local.deleteGame(game)
-    }
+
+    override suspend fun getGameDetail(id: Long) =
+        remote.getGameDetail(id)
 }

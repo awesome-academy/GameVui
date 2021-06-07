@@ -13,4 +13,7 @@ class GameRemoteDataSource(
 
     override suspend fun getGameByName(name: String) =
         apiService.getGameByName(name)
+
+    override suspend fun getGameDetail(id: Long) =
+        apiService.getGameDetail(id)
 }
