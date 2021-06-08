@@ -29,7 +29,7 @@ class SavedFragment : BaseFragment<FragmentSavedBinding>() {
     }
 
     private fun onItemClick(game: Game) {
-        val action = SavedFragmentDirections.savedFragmentToDetailFragment(game.id)
+        val action = SavedFragmentDirections.savedFragmentToDetailFragment(game)
         findNavController().navigate(action)
     }
 

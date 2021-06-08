@@ -28,4 +28,7 @@ class GameRepositoryImpl(
 
     override suspend fun getGameDetail(id: Long) =
         remote.getGameDetail(id)
+
+    override suspend fun isFavorite(id: Long) =
+        local.isFavorite(id)
 }

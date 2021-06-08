@@ -16,8 +16,8 @@
         android:name="com.sun.gamevui.ui.GameDetailFragment"
         android:label="GameDetailFragment">
         <argument
-            android:name="id"
-            app:argType="long" />
+            android:name="game"
+            app:argType="com.sun.gamevui.data.model.Game" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"

@@ -12,4 +12,5 @@ interface GameRepository {
     suspend fun insertGame(game: Game)
     suspend fun deleteGame(game: Game)
     suspend fun getGameDetail(id: Long): GameDetail
+    suspend fun isFavorite(id: Long): Game
 }

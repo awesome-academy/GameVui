@@ -17,5 +17,6 @@ interface GameDataSource {
         suspend fun getSavedGames(): List<Game>
         suspend fun insertGame(game: Game)
         suspend fun deleteGame(game: Game)
+        suspend fun isFavorite(id: Long): Game
     }
 }
