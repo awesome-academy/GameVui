@@ -1,10 +1,7 @@
 package com.sun.gamevui.di
 
 import com.sun.gamevui.data.*
-import com.sun.gamevui.data.repository.GameRepository
-import com.sun.gamevui.data.repository.GameRepositoryImpl
-import com.sun.gamevui.data.repository.GenreRepository
-import com.sun.gamevui.data.repository.GenreRepositoryImpl
+import com.sun.gamevui.data.repository.*
 import org.koin.dsl.module
 
 val repositoryModule = module {
@@ -13,4 +10,6 @@ val repositoryModule = module {
     single<GameRepository> { GameRepositoryImpl(get(), get()) }
     single<GenreDataSource> { GenreRemoteDataSource(get()) }
     single<GenreRepository> { GenreRepositoryImpl(get()) }
+    single<ScreenshotRepository> { ScreenshotRepositoryImpl(get()) }
+    single<ScreenshotDataSource> { ScreenshotRemoteDataSource(get()) }
 }

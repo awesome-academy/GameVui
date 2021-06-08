@@ -1,10 +1,22 @@
 package com.sun.gamevui.data.remote
 
 object ApiConfig {
-    //getGenres: https://api.rawg.io/api/genres?key=
-    //getPopularGamesForPlatform: https://api.rawg.io/api/games?parent_platforms=&key=
-    //getGameByGenreForPlatform: https://api.rawg.io/api/games?genres=&parent_platforms=&key=
-    //getGameByName: https://api.rawg.io/api/games?search=&key=
+
+    /**
+     *get Genres
+     *https://api.rawg.io/api/genres?key=
+     *get Popular Games For Platform
+     *https://api.rawg.io/api/games?parent_platforms=&key=
+     *get Game By Genre For Platform
+     *https://api.rawg.io/api/games?genres=&parent_platforms=&key=
+     *get Game By Name
+     *https://api.rawg.io/api/games?search=&key=
+     *get Game Detail
+     *https://api.rawg.io/api/games/id?key=
+     *get Screenshots
+     *https://api.rawg.io/api/games/id/screenshots?key=
+     */
+
     const val BASE_URL = "https://api.rawg.io/api/"
     const val BASE_KEY = "key"
     const val BASE_GAME = "games"
