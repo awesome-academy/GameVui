@@ -31,5 +31,6 @@ class ImageSlideAdapter(
         if (data != null) {
             screenshots = data.toMutableList()
         }
+        notifyDataSetChanged()
     }
 }

@@ -3,6 +3,7 @@ package com.sun.gamevui.data.remote
 import com.sun.gamevui.data.model.GameDetail
 import com.sun.gamevui.data.model.GameResponse
 import com.sun.gamevui.data.model.GenreResponse
+import com.sun.gamevui.data.model.ScreenshotResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -27,8 +28,13 @@ interface ApiService {
         @Query(ApiConfig.BASE_SEARCH) name: String
     ): GameResponse
 
-    @GET(ApiConfig.BASE_GAME + "/{game_id}")
+    @GET("${ApiConfig.BASE_GAME}/{game_id}")
     suspend fun getGameDetail(
         @Path("game_id") id: Long
     ): GameDetail
+
+    @GET("${ApiConfig.BASE_GAME}/{game_id}/screenshots")
+    suspend fun getScreenshots(
+        @Path("game_id") id: Long
+    ): ScreenshotResponse
 }
