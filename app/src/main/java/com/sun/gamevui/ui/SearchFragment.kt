@@ -37,7 +37,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>() {
     }
 
     private fun clickItemGame(game: Game) {
-        val action = SearchFragmentDirections.actionSearchFragmentToGameDetailFragment(game.id)
+        val action = SearchFragmentDirections.actionSearchFragmentToGameDetailFragment(game)
         findNavController().navigate(action)
     }
 }

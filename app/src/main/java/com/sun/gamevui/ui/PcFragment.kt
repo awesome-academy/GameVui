@@ -67,12 +67,12 @@ class PcFragment : BaseFragment<FragmentPlatformBinding>() {
     }
 
     private fun clickItemPopular(game: Game) {
-        val action = HomeFragmentDirections.actionHomeFragmentToGameDetailFragment(game.id)
+        val action = HomeFragmentDirections.actionHomeFragmentToGameDetailFragment(game)
         findNavController().navigate(action)
     }
 
     private fun clickItemGame(game: Game) {
-        val action = HomeFragmentDirections.actionHomeFragmentToGameDetailFragment(game.id)
+        val action = HomeFragmentDirections.actionHomeFragmentToGameDetailFragment(game)
         findNavController().navigate(action)
     }
 }

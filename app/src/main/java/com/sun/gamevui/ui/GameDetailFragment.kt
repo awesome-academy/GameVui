@@ -26,7 +26,10 @@ class GameDetailFragment : BaseFragment<FragmentGameDetailBinding>() {
     }
 
     override fun initData() {
-        viewModel.getGameDetail(arg.id)
+        viewModel.apply {
+            getGameDetail(arg.game.id)
+            checkFavorite(arg.game.id)
+        }
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             detailVM = viewModel

@@ -117,8 +117,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_8"
                 android:src="@drawable/ic_microsoft"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@id/textAvailable"
-                app:layout_constraintTop_toBottomOf="@id/tabIndicator" />
+                app:layout_constraintTop_toBottomOf="@id/tabIndicator"
+                app:platform="@{`PC`}"
+                app:searchIcon="@{detailVM.detail.parentPlatform}" />
 
             <ImageView
                 android:id="@+id/imagePs"
@@ -126,8 +129,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_8"
                 android:src="@drawable/ic_playstation"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@id/imagePc"
-                app:layout_constraintTop_toBottomOf="@id/tabIndicator" />
+                app:layout_constraintTop_toBottomOf="@id/tabIndicator"
+                app:platform="@{`PlayStation`}"
+                app:searchIcon="@{detailVM.detail.parentPlatform}" />
 
             <ImageView
                 android:id="@+id/imageXbox"
@@ -135,8 +141,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_8"
                 android:src="@drawable/ic_xbox"
+                android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@id/imagePs"
-                app:layout_constraintTop_toBottomOf="@id/tabIndicator" />
+                app:layout_constraintTop_toBottomOf="@id/tabIndicator"
+                app:platform="@{`Xbox`}"
+                app:searchIcon="@{detailVM.detail.parentPlatform}" />
 
             <TextView
                 android:id="@+id/textName"
@@ -199,7 +208,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_12"
-                android:src="@drawable/ic_saved"
+                android:src="@{detailVM.isFavorite() ? @drawable/ic_favorite :@drawable/ic_saved}"
                 app:layout_constraintEnd_toEndOf="@id/imageBackground"
                 app:layout_constraintTop_toTopOf="@id/imageBackground" />
 

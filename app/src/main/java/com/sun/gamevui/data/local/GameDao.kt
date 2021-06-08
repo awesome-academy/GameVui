@@ -19,4 +19,6 @@ interface GameDao {
     @Delete
     suspend fun deleteGame(game: Game)
 
+    @Query("SELECT * FROM game WHERE id =:id")
+    fun isFavorite(id: Long): Game
 }

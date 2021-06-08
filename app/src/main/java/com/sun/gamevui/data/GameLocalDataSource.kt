@@ -14,4 +14,7 @@ class GameLocalDataSource(
 
     override suspend fun deleteGame(game: Game) =
         gameDao.deleteGame(game)
+
+    override suspend fun isFavorite(id: Long) =
+        gameDao.isFavorite(id)
 }

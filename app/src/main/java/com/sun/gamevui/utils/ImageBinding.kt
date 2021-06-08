@@ -16,8 +16,8 @@ fun ImageView.loadImage(uri: String?) {
 }
 
 @BindingAdapter(value = ["app:searchIcon", "app:platform"])
-fun loadIcon(view: View, parentPlatform: List<Platforms>, platform: String) {
-    parentPlatform.firstOrNull() {
+fun loadIcon(view: View, parentPlatform: List<Platforms>?, platform: String) {
+    parentPlatform?.firstOrNull() {
         if (it.platform.name == platform) {
             view.visibility = View.VISIBLE
         }
