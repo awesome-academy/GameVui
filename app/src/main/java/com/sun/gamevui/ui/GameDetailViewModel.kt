@@ -50,9 +50,14 @@ class GameDetailViewModel(
 
     fun insertGame(game: Game) {
         viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
-            gameRepo.insertGame(game)
-            checkFavorite(game.id)
+            if (isFavorite.value == true) {
+                gameRepo.deleteGame(game)
+                _isFavorite.postValue(false)
+
+            } else {
+                gameRepo.insertGame(game)
+                _isFavorite.postValue(true)
+            }
         }
     }
-
 }
