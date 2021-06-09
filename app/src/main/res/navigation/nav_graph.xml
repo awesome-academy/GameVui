@@ -18,6 +18,9 @@
         <argument
             android:name="game"
             app:argType="com.sun.gamevui.data.model.Game" />
+        <action
+            android:id="@+id/action_detailFragment_to_tagFragment"
+            app:destination="@id/tagFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
@@ -34,5 +37,16 @@
         <action
             android:id="@+id/savedFragment_to_DetailFragment"
             app:destination="@id/gameDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tagFragment"
+        android:name="com.sun.gamevui.ui.TagFragment"
+        android:label="TagFragment">
+        <argument
+            android:name="tagId"
+            app:argType="long" />
+        <argument
+            android:name="type"
+            app:argType="string" />
     </fragment>
 </navigation>

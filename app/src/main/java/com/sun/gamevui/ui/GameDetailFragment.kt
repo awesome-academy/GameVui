@@ -1,5 +1,6 @@
 package com.sun.gamevui.ui
 
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.sun.gamevui.R
 import com.sun.gamevui.base.BaseFragment
@@ -8,6 +9,7 @@ import com.sun.gamevui.data.model.Genre
 import com.sun.gamevui.data.model.Publisher
 import com.sun.gamevui.databinding.FragmentGameDetailBinding
 import com.sun.gamevui.ui.adapter.*
+import com.sun.gamevui.utils.Constant
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class GameDetailFragment : BaseFragment<FragmentGameDetailBinding>() {
@@ -43,9 +45,37 @@ class GameDetailFragment : BaseFragment<FragmentGameDetailBinding>() {
     }
 
     override fun initActions() {
+        binding?.apply {
+            textAdd.setOnClickListener {
+                viewModel.insertGame(arg.game)
+            }
+            imageBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
+        }
     }
 
-    private fun onGenreClick(genre: Genre) {}
-    private fun onDeveloperClick(developer: Developer) {}
-    private fun onPublisherClick(publisher: Publisher) {}
+    private fun onGenreClick(genre: Genre) {
+        val action = GameDetailFragmentDirections.actionDetailFragmentToTagFragment(
+            genre.id,
+            Constant.BASE_GENRE
+        )
+        findNavController().navigate(action)
+    }
+
+    private fun onDeveloperClick(developer: Developer) {
+        val action = GameDetailFragmentDirections.actionDetailFragmentToTagFragment(
+            developer.id,
+            Constant.BASE_DEVELOPER
+        )
+        findNavController().navigate(action)
+    }
+
+    private fun onPublisherClick(publisher: Publisher) {
+        val action = GameDetailFragmentDirections.actionDetailFragmentToTagFragment(
+            publisher.id,
+            Constant.BASE_PUBLISHER
+        )
+        findNavController().navigate(action)
+    }
 }
