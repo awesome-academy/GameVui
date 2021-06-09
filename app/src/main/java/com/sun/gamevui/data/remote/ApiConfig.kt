@@ -26,4 +26,6 @@ object ApiConfig {
     const val BASE_PARENT_PLATFORM = "parent_platforms"
     const val BASE_GENRE = "genres"
     const val BASE_SEARCH = "search"
+    const val BASE_PUBLISHERS = "publishers"
+    const val BASE_DEVELOPER = "developers"
 }

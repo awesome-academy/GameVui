@@ -31,4 +31,13 @@ class GameRepositoryImpl(
 
     override suspend fun isFavorite(id: Long) =
         local.isFavorite(id)
+
+    override suspend fun getTagGenre(genreId: Long) =
+        remote.getTagGenre(genreId)
+
+    override suspend fun getTagPublisher(publisherId: Long) =
+        remote.getTagPublisher(publisherId)
+
+    override suspend fun getTagDeveloper(developerId: Long) =
+        remote.getTagDeveloper(developerId)
 }

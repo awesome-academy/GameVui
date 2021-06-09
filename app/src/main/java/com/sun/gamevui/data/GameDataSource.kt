@@ -11,6 +11,9 @@ interface GameDataSource {
         suspend fun getGameByGenre(genre: String, platform: String): GameResponse
         suspend fun getGameByName(name: String): GameResponse
         suspend fun getGameDetail(id: Long): GameDetail
+        suspend fun getTagGenre(genreId: Long): GameResponse
+        suspend fun getTagPublisher(publisherId: Long): GameResponse
+        suspend fun getTagDeveloper(developerId: Long): GameResponse
     }
 
     interface Local {

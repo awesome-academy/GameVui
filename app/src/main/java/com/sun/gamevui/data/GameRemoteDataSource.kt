@@ -16,4 +16,13 @@ class GameRemoteDataSource(
 
     override suspend fun getGameDetail(id: Long) =
         apiService.getGameDetail(id)
+
+    override suspend fun getTagGenre(genreId: Long) =
+        apiService.getTagGenre(genreId)
+
+    override suspend fun getTagPublisher(publisherId: Long) =
+        apiService.getTagPublisher(publisherId)
+
+    override suspend fun getTagDeveloper(developerId: Long) =
+        apiService.getTagDeveloper(developerId)
 }
