@@ -37,4 +37,19 @@ interface ApiService {
     suspend fun getScreenshots(
         @Path("game_id") id: Long
     ): ScreenshotResponse
+
+    @GET(ApiConfig.BASE_GAME)
+    suspend fun getTagGenre(
+        @Query(ApiConfig.BASE_GENRE) genreId: Long
+    ): GameResponse
+
+    @GET(ApiConfig.BASE_GAME)
+    suspend fun getTagPublisher(
+        @Query(ApiConfig.BASE_PUBLISHERS) publisherId: Long
+    ): GameResponse
+
+    @GET(ApiConfig.BASE_GAME)
+    suspend fun getTagDeveloper(
+        @Query(ApiConfig.BASE_DEVELOPER) developerId: Long
+    ): GameResponse
 }

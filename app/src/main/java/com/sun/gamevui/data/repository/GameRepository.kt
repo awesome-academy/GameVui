@@ -13,4 +13,7 @@ interface GameRepository {
     suspend fun deleteGame(game: Game)
     suspend fun getGameDetail(id: Long): GameDetail
     suspend fun isFavorite(id: Long): Game
+    suspend fun getTagGenre(genreId: Long): GameResponse
+    suspend fun getTagPublisher(publisherId: Long): GameResponse
+    suspend fun getTagDeveloper(developerId: Long): GameResponse
 }

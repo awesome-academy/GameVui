@@ -9,5 +9,5 @@ val viewModelModule = module {
     viewModel { GameDetailViewModel(get(), get()) }
     viewModel { SearchViewModel(get()) }
     viewModel { SavedViewModel(get()) }
-    viewModel { TagViewModel() }
+    viewModel { TagViewModel(get()) }
 }
