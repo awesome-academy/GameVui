@@ -1,5 +1,6 @@
 package com.sun.gamevui.ui
 
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.sun.gamevui.R
 import com.sun.gamevui.base.BaseFragment
@@ -34,8 +35,13 @@ class TagFragment : BaseFragment<FragmentTagBinding>() {
     }
 
     override fun initActions() {
+        binding?.imageBack?.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun onItemClick(game: Game) {
+        val action = TagFragmentDirections.actionTagFragmentToDetailFragment(game)
+        findNavController().navigate(action)
     }
 }
