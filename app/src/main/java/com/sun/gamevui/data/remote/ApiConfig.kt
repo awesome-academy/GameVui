@@ -28,4 +28,6 @@ object ApiConfig {
     const val BASE_SEARCH = "search"
     const val BASE_PUBLISHERS = "publishers"
     const val BASE_DEVELOPER = "developers"
+    const val BASE_RSS = "https://gamek.vn/"
+    const val BASE_ENDPOINT_RSS = "thi-truong.rss"
 }

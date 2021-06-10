@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+
+        <variable
+            name="news"
+            type="com.sun.gamevui.data.model.RssItem" />
+    </data>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -19,10 +24,12 @@
                 android:id="@+id/imageNews"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:scaleType="fitXY"
                 app:layout_constraintDimensionRatio="1:1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_percent="0.3"
+                app:loadImage="@{news.image}"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
@@ -30,6 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_4"
+                android:text="@{news.title}"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/sp_16"
                 android:textStyle="bold"
