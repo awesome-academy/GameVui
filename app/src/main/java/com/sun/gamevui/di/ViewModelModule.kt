@@ -10,5 +10,5 @@ val viewModelModule = module {
     viewModel { SearchViewModel(get()) }
     viewModel { SavedViewModel(get()) }
     viewModel { TagViewModel(get()) }
-    viewModel { NewsViewModel() }
+    viewModel { NewsViewModel(get()) }
 }
