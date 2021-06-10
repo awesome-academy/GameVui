@@ -52,4 +52,8 @@
             android:id="@+id/action_tagFragment_to_detailFragment"
             app:destination="@id/gameDetailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.sun.gamevui.ui.NewsFragment"
+        android:label="NewsFragment" />
 </navigation>
