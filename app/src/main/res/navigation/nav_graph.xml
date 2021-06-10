@@ -48,5 +48,8 @@
         <argument
             android:name="type"
             app:argType="string" />
+        <action
+            android:id="@+id/action_tagFragment_to_detailFragment"
+            app:destination="@id/gameDetailFragment" />
     </fragment>
 </navigation>
