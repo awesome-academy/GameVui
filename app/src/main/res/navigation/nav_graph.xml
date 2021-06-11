@@ -55,5 +55,17 @@
     <fragment
         android:id="@+id/newsFragment"
         android:name="com.sun.gamevui.ui.NewsFragment"
-        android:label="NewsFragment" />
+        android:label="NewsFragment">
+        <action
+            android:id="@+id/action_newsFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="com.sun.gamevui.ui.NewsDetailFragment"
+        android:label="NewsDetailFragment">
+        <argument
+            android:name="link"
+            app:argType="string" />
+    </fragment>
 </navigation>

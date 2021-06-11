@@ -11,4 +11,5 @@ object Constant {
     const val BASE_INDEX = "src="
     const val BASE_SPLIT = '"'
     const val BASE_POSITION = 1
+    const val ERROR_LINK = "Link not available"
 }
